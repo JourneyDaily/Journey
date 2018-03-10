@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Journey</string>
+    <string name="user">User</string>
+    <string name="pass">Password</string>
+    <string name="acept">Acept</string>
+    <string name="register">Register</string>
+    <string name="form">Sign Up</string>
+    <string name="login">User Login: </string>
+    <string name="password">Password: </string>
+    <string name="password2">Password(Repeat):</string>
+    <string name="pass2">Password Again</string>
+    <string name="email">Email:</string>
+    <string name="signup">Sign Up</string>
+    <string name="email2">your Email</string>
+    <string name="name">Name:</string>
+    <string name="name2">your name</string>
+    <string name="lastname">last name</string>
+    <string name="last">Last name:</string>
+</resources>
