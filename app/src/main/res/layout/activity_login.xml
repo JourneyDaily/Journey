@@ -49,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/register"
+        android:id="@+id/tvRegister"
         android:gravity="center"
         android:textColor="@color/blue"
         android:onClick="register"/>
