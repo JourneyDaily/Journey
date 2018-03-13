@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if(id == R.id.btAcept){
             if ( user.equals(etUser.getText().toString())  &&  pass.equals(etPass.getText().toString())){
-                //Actividad principal
+                //Actividad principal -> enviar datos a MainActivity para luego enviar a perfil
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivityForResult(intent,123);
             } else {

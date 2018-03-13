@@ -16,5 +16,7 @@
     <string name="name2">your name</string>
     <string name="lastname">last name</string>
     <string name="last">Last name:</string>
-    <string name="perfil">Mi Perfil</string>
+    <string name="profile">My Profile</string>
+    <string name="exit">Exit</string>
+    <string name="home">Home</string>
 </resources>

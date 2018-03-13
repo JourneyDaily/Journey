@@ -25,8 +25,15 @@ public class MainActivity extends AppCompatActivity {
 
         if(id == R.id.mProfile){
             Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            //Enviar datos de registro
             startActivity(intent);
         }
+        if(id == R.id.mExit){
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }
+
