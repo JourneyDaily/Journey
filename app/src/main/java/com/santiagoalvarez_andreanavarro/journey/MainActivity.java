@@ -9,10 +9,19 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    String user="*",name,lastname,email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        user = getIntent().getExtras().getString("user");
+        name = getIntent().getExtras().getString("name");
+        lastname = getIntent().getExtras().getString("lastname");
+        email = getIntent().getExtras().getString("email");
+
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -25,7 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
         if(id == R.id.mProfile){
             Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-            //Enviar datos de registro
+            intent.putExtra("user", user);
+            intent.putExtra("name",name);
+            intent.putExtra("lastname",lastname);
+            intent.putExtra("email",email);
             startActivity(intent);
         }
         if(id == R.id.mExit){

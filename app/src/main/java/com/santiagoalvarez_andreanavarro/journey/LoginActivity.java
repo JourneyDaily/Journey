@@ -66,12 +66,12 @@ public class LoginActivity extends AppCompatActivity {
             if ( user.equals(etUser.getText().toString())  &&  pass.equals(etPass.getText().toString())){
                 //Actividad principal -> enviar datos a MainActivity para luego enviar a perfil
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
                 intent.putExtra("user", user);
                 intent.putExtra("pass", pass);
                 intent.putExtra("name",name);
                 intent.putExtra("lastname",lastname);
                 intent.putExtra("email",email);
+                startActivity(intent);
             } else {
                 //Toast
                 Toast.makeText(this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
