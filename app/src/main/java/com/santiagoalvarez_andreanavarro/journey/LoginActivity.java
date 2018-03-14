@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
 
     TextView tvRegister;
     EditText etUser, etPass;
-    String user="", pass="";
+    String user="*", pass="*",name,lastname,email;
     Button btAcept;
 
     @Override
@@ -52,6 +52,9 @@ public class LoginActivity extends AppCompatActivity {
             //etPass.setText(String.valueOf(data.getExtras().getString("pass")));
             user = String.valueOf(data.getExtras().getString("user"));
             pass = String.valueOf(data.getExtras().getString("pass"));
+            name = String.valueOf(data.getExtras().getString("name"));
+            lastname = String.valueOf(data.getExtras().getString("lastname"));
+            email = String.valueOf(data.getExtras().getString("email"));
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -63,7 +66,12 @@ public class LoginActivity extends AppCompatActivity {
             if ( user.equals(etUser.getText().toString())  &&  pass.equals(etPass.getText().toString())){
                 //Actividad principal -> enviar datos a MainActivity para luego enviar a perfil
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivityForResult(intent,123);
+                startActivity(intent);
+                intent.putExtra("user", user);
+                intent.putExtra("pass", pass);
+                intent.putExtra("name",name);
+                intent.putExtra("lastname",lastname);
+                intent.putExtra("email",email);
             } else {
                 //Toast
                 Toast.makeText(this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
