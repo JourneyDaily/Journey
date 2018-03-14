@@ -27,8 +27,17 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
-        user="*";
-        pass="*";
+
+
+        Bundle extra = getIntent().getExtras();
+        if (extra==null){
+            user="1237842543420389702932874603894503487512890309";
+        }else {
+            user = extra.getString("user");
+            pass = extra.getString("pass");
+
+        }
+
 
         tvRegister = findViewById(R.id.tvRegister);
         etUser = findViewById(R.id.etUser);

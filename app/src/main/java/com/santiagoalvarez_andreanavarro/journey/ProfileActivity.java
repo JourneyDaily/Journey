@@ -76,6 +76,7 @@ public class ProfileActivity extends AppCompatActivity {
             intent.putExtra("lastname",lastname);
             intent.putExtra("email",email);
             startActivity(intent);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

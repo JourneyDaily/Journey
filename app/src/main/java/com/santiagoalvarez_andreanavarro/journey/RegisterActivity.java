@@ -51,8 +51,8 @@ public class RegisterActivity extends AppCompatActivity {
         pass2 = etPass2.getText().toString();
         email = etEmail.getText().toString();
 
-        if (id==R.id.btSignup && (TextUtils.isEmpty(etName.getText().toString()) ||TextUtils.isEmpty(etLastname.getText().toString()) || TextUtils.isEmpty(etPass.getText().toString()))
-                ||TextUtils.isEmpty(etPass2.getText().toString())||TextUtils.isEmpty(etEmail.getText().toString())){//Negra, está linea, cierto que podemos reemplazar lo que hay dentro de los parentesis por las variables?
+        if (id==R.id.btSignup && TextUtils.isEmpty(name) ||TextUtils.isEmpty(lastname) || TextUtils.isEmpty(pass)
+                ||TextUtils.isEmpty(pass2)||TextUtils.isEmpty(email)){
             //Toast
             Toast.makeText(this, "Faltan campos por llenar, por favor verifique para continuar proceso de registro", Toast.LENGTH_LONG).show();
         }else if (!Objects.equals(etPass.getText().toString(), etPass2.getText().toString())){
