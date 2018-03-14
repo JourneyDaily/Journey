@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    String user="*",name,lastname,email;
+    String user="*",pass,name,lastname,email;
     TextView etNameP, etLastnameP, etUserP, etEmailP;
 
     @Override
@@ -30,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         user = getIntent().getExtras().getString("user");
         name = getIntent().getExtras().getString("name");
+        pass = getIntent().getExtras().getString("pass");
         lastname = getIntent().getExtras().getString("lastname");
         email = getIntent().getExtras().getString("email");
 
@@ -51,17 +52,29 @@ public class ProfileActivity extends AppCompatActivity {
         if(id == R.id.mHome){
             user = getIntent().getExtras().getString("user");
             name = getIntent().getExtras().getString("name");
+            pass = getIntent().getExtras().getString("pass");
             lastname = getIntent().getExtras().getString("lastname");
             email = getIntent().getExtras().getString("email");
             Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
             intent.putExtra("user", user);
             intent.putExtra("name",name);
+            intent.putExtra("pass",pass);
             intent.putExtra("lastname",lastname);
             intent.putExtra("email",email);
             startActivity(intent);
         }
         if(id == R.id.mExit){
+            user = getIntent().getExtras().getString("user");
+            name = getIntent().getExtras().getString("name");
+            pass = getIntent().getExtras().getString("pass");
+            lastname = getIntent().getExtras().getString("lastname");
+            email = getIntent().getExtras().getString("email");
             Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+            intent.putExtra("user", user);
+            intent.putExtra("name",name);
+            intent.putExtra("pass",pass);
+            intent.putExtra("lastname",lastname);
+            intent.putExtra("email",email);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

@@ -31,6 +31,13 @@ public class LoginActivity extends AppCompatActivity {
         etUser = findViewById(R.id.etUser);
         etPass = findViewById(R.id.etPass);
         btAcept = findViewById(R.id.btAcept);
+        if (user!="*" && pass!="*") {
+            user = getIntent().getExtras().getString("user");
+            name = getIntent().getExtras().getString("name");
+            pass = getIntent().getExtras().getString("pass");
+            lastname = getIntent().getExtras().getString("lastname");
+            email = getIntent().getExtras().getString("email");
+        }
 
     }
 
