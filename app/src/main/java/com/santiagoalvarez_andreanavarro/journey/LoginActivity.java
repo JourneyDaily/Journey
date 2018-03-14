@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     TextView tvRegister;
     EditText etUser, etPass;
-    String user="*", pass="*",name,lastname,email;
+    String user, pass,name,lastname,email;
     Button btAcept;
 
     @Override
@@ -26,18 +27,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
+        user="*";
+        pass="*";
 
         tvRegister = findViewById(R.id.tvRegister);
         etUser = findViewById(R.id.etUser);
         etPass = findViewById(R.id.etPass);
         btAcept = findViewById(R.id.btAcept);
-        if (user!="*" && pass!="*") {
-            user = getIntent().getExtras().getString("user");
-            name = getIntent().getExtras().getString("name");
-            pass = getIntent().getExtras().getString("pass");
-            lastname = getIntent().getExtras().getString("lastname");
-            email = getIntent().getExtras().getString("email");
-        }
 
     }
 
@@ -85,4 +81,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
+
+
 }
