@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     TextView tvRegister;
     EditText etUser, etPass;
-    String user="", pass="";
+    String user, pass,name,lastname,email;
     Button btAcept;
 
     @Override
@@ -26,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
+        user="*";
+        pass="*";
 
         tvRegister = findViewById(R.id.tvRegister);
         etUser = findViewById(R.id.etUser);
@@ -52,6 +55,9 @@ public class LoginActivity extends AppCompatActivity {
             //etPass.setText(String.valueOf(data.getExtras().getString("pass")));
             user = String.valueOf(data.getExtras().getString("user"));
             pass = String.valueOf(data.getExtras().getString("pass"));
+            name = String.valueOf(data.getExtras().getString("name"));
+            lastname = String.valueOf(data.getExtras().getString("lastname"));
+            email = String.valueOf(data.getExtras().getString("email"));
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -63,11 +69,18 @@ public class LoginActivity extends AppCompatActivity {
             if ( user.equals(etUser.getText().toString())  &&  pass.equals(etPass.getText().toString())){
                 //Actividad principal -> enviar datos a MainActivity para luego enviar a perfil
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivityForResult(intent,123);
+                intent.putExtra("user", user);
+                intent.putExtra("pass", pass);
+                intent.putExtra("name",name);
+                intent.putExtra("lastname",lastname);
+                intent.putExtra("email",email);
+                startActivity(intent);
             } else {
                 //Toast
                 Toast.makeText(this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
+
 }
