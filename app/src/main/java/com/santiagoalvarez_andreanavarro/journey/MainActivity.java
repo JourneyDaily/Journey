@@ -15,11 +15,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/*
         user = getIntent().getExtras().getString("user");
         name = getIntent().getExtras().getString("name");
         lastname = getIntent().getExtras().getString("lastname");
-        email = getIntent().getExtras().getString("email");
+        email = getIntent().getExtras().getString("email");*/
 
 
     }
@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.mProfile){
+            user = getIntent().getExtras().getString("user");
+            name = getIntent().getExtras().getString("name");
+            lastname = getIntent().getExtras().getString("lastname");
+            email = getIntent().getExtras().getString("email");
             Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
             intent.putExtra("user", user);
             intent.putExtra("name",name);

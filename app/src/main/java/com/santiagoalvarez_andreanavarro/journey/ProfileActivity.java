@@ -49,7 +49,15 @@ public class ProfileActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.mHome){
+            user = getIntent().getExtras().getString("user");
+            name = getIntent().getExtras().getString("name");
+            lastname = getIntent().getExtras().getString("lastname");
+            email = getIntent().getExtras().getString("email");
             Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+            intent.putExtra("user", user);
+            intent.putExtra("name",name);
+            intent.putExtra("lastname",lastname);
+            intent.putExtra("email",email);
             startActivity(intent);
         }
         if(id == R.id.mExit){
