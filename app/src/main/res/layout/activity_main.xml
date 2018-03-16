@@ -24,9 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/description"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/roboto_lightitalic"
             android:textStyle="bold"
-            android:textSize="19sp"
+            android:textSize="20sp"
             android:id="@+id/etLastnameP"/>
     </LinearLayout>
 </LinearLayout>
