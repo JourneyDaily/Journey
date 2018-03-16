@@ -67,7 +67,5 @@ public class RegisterActivity extends AppCompatActivity {
             setResult(RESULT_OK,intent);
             finish();
         }
-
-
     }
 }
