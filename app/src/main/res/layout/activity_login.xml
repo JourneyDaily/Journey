@@ -42,8 +42,8 @@
         android:text="@string/acept"
         android:id="@+id/btAcept"
         android:textAllCaps="false"
-        android:textStyle="italic"
-        android:textColor="@color/darkorange"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/orangered"
         android:onClick="acept"/>
     <TextView
         android:layout_width="match_parent"
@@ -52,6 +52,7 @@
         android:id="@+id/tvRegister"
         android:gravity="center"
         android:textColor="@color/blue"
+        android:fontFamily="@font/roboto_medium"
         android:onClick="register"/>
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -50,18 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.mHome){
-            user = getIntent().getExtras().getString("user");
-            name = getIntent().getExtras().getString("name");
-            pass = getIntent().getExtras().getString("pass");
-            lastname = getIntent().getExtras().getString("lastname");
-            email = getIntent().getExtras().getString("email");
-            Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
-            intent.putExtra("user", user);
-            intent.putExtra("name",name);
-            intent.putExtra("pass",pass);
-            intent.putExtra("lastname",lastname);
-            intent.putExtra("email",email);
-            startActivity(intent);
+            onBackPressed();
         }
         if(id == R.id.mExit){
             user = getIntent().getExtras().getString("user");
@@ -76,8 +66,65 @@ public class ProfileActivity extends AppCompatActivity {
             intent.putExtra("lastname",lastname);
             intent.putExtra("email",email);
             startActivity(intent);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        user = getIntent().getExtras().getString("user");
+        name = getIntent().getExtras().getString("name");
+        pass = getIntent().getExtras().getString("pass");
+        lastname = getIntent().getExtras().getString("lastname");
+        email = getIntent().getExtras().getString("email");
+        Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+        intent.putExtra("user", user);
+        intent.putExtra("name",name);
+        intent.putExtra("pass",pass);
+        intent.putExtra("lastname",lastname);
+        intent.putExtra("email",email);
+        startActivity(intent);
+        finish();
+        super.onBackPressed();
+    }
+
+    /*@Override
+    protected void onStart() {
+        //onBackPressed();
+
+        super.onStart();
+        Log.d("Metodo", "OnStart_Profile");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Metodo", "OnResume_Profile");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("Metodo", "OnPause_Profile");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("Metodo", "OnStop_Profile");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("Metodo", "OnRestart_Profile");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Metodo", "OnDestroy_Profile");
+    } */
 
 }

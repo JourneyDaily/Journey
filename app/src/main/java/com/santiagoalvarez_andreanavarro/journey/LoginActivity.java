@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,8 +28,19 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
-        user="*";
-        pass="*";
+
+
+        Bundle extra = getIntent().getExtras();
+        if (extra==null){
+            user="1237842543420389702932874603894503487512890309";
+        }else {
+            user = extra.getString("user");
+            pass = extra.getString("pass");
+            email = extra.getString("email");
+            lastname = extra.getString("lastname");
+            name = extra.getString("name");
+        }
+
 
         tvRegister = findViewById(R.id.tvRegister);
         etUser = findViewById(R.id.etUser);
@@ -75,6 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                 intent.putExtra("lastname",lastname);
                 intent.putExtra("email",email);
                 startActivity(intent);
+                finish();
             } else {
                 //Toast
                 Toast.makeText(this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
@@ -82,5 +95,49 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+        Log.d("Metodo", "finish_Login");
+        super.onBackPressed();
+    }
+
+    /*@Override
+    protected void onStart() {
+        //onBackPressed();
+
+        super.onStart();
+        Log.d("Metodo", "OnStart_Login");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Metodo", "OnResume_Login");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("Metodo", "OnPause_Login");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("Metodo", "OnStop_Login");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("Metodo", "OnRestart_Login");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Metodo", "OnDestroy_Login");
+    }*/
 
 }
